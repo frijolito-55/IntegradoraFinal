@@ -1,0 +1,59 @@
+    <body>
+        <div class="container-fluid">
+            <div class="row justify-content-center align-content-center">
+                <div class="col-8 barra">
+                    <img src="../../../assets/img/logo.png" alt="Logo">
+                </div>
+                <div class="col-4 text-right barra">
+                    <ul class="navbar-nav mr-auto">
+    
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="barra-lateral col-12 col-sm-auto">
+                <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">
+                    <a routerLink="/dashboard"><i class="bi bi-clipboard-pulse"></i><span>Mis citas</span></a>
+                    <a routerLink="/mispacientes"><i class="bi bi-person-circle"></i><span>Mis pacientes</span></a>
+                    <a routerLink="/subirreceta"><i class="bi bi-file-earmark-pdf-fill"></i><span>Subir receta</span></a>
+                </nav>
+            </div>
+            <main class="main col">
+                <div class="row justify-content-center align-content-center text-center">
+                    <div class="columna col-lg-12">
+                        <h3>MIS PACIENTES</h3>
+
+
+                        <div *ngIf="dataUser">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <!-- <th scope="col">UID</th> -->
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Correo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let usuario of dataUser | keyvalue">
+                                        <!-- <td>{{ usuario.key }}</td> -->
+                                        <td>{{ usuario.value.nombre }}</td>
+                                        <td>{{ usuario.value.correo }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/646c794df3.js" crossorigin="anonymous"></script>
+</body>

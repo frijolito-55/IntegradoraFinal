@@ -1,0 +1,78 @@
+<body>
+  <div class="container-fluid">
+      <div class="row justify-content-center align-content-center">
+          <div class="col-8 barra">
+              <img src="../../../assets/img/logo.png" alt="Logo">
+          </div>
+          <div class="col-4 text-right barra">
+              <ul class="navbar-nav mr-auto">
+              </ul>
+          </div>
+          <div class="busqueda-container">
+            <label for="nombreBusqueda">Buscar por nombre:</label>
+            <input type="text" id="nombreBusqueda" [(ngModel)]="nombreBusqueda">
+            <button (click)="buscarPorNombre()">Buscar</button>
+          </div>
+          
+      </div>
+  </div>
+  
+      <!-- Contenido principal -->
+      <div class="row" >
+        <!-- Barra lateral -->
+        <div class="barra-lateral col-12 col-sm-auto">
+          <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">
+            <a routerLink="/dashboard"><i class="bi bi-clipboard-pulse"></i><span>Mis citas</span></a>
+            <a routerLink="/mispacientes"><i class="bi bi-person-circle"></i><span>Mis pacientes</span></a>
+            <a routerLink="/subirreceta"><i class="bi bi-file-earmark-pdf-fill"></i><span>Subir receta</span></a>
+          </nav>
+        </div>
+  
+        <!-- Contenido principal -->
+        <main class="main col-12 col-sm">
+          <div class="row justify-content-center align-content-center text-center">
+            <div class="columna col-lg-10">
+              <div *ngIf="dataCitas">
+                <div class="table-responsive">
+                  <table class="table expanding-table" style="margin-top: 50px;">
+                    <!-- encabezado de la tabla -->
+                    <thead>
+                      <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Uid</th>
+                        
+                        <th scope="col">Opciones</th>
+                      </tr>
+                    </thead>
+                    <!-- cuerpo de la tabla -->
+                    <tbody>
+                      <!-- bucle a través de los usuarios -->
+                      <tr *ngFor="let usuario of dataCitas | keyvalue">
+                        <td>{{ usuario.value.nombre }}</td>
+                        <td>{{ usuario.value.fecha }}</td>
+                       
+                        <td><button class="btn btn-custom" (click)="copiarUID(usuario.value.uidUsuario)">Copiar UID</button></td>
+                        <td>
+                          <form action="subirreceta.component.ts">
+                            <input type="hidden" value="{{ usuario.value.uidUsuario }}">
+                            <label for="file-upload" class="custom-file-upload">
+                              Seleccionar archivo
+                            </label>
+                            <input type="file" id="file-upload" (change)="onFileChange($event)">
+                            <button type="button" class="btn btn-primary" id="" (click)="subirArchivos()">Subir Archivo</button>
+                          </form>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+  </body>
+  
+

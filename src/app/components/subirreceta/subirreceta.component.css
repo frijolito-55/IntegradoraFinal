@@ -1,0 +1,280 @@
+body {
+    background: #f1f1f1;
+}
+/* personalizar la caja de texto */
+.busqueda-container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    margin-left: 125%; /* Ajusta el margen izquierdo según tus necesidades */
+
+    position: absolute;
+    left: auto;
+    top: 120px;
+    
+}
+  
+  label {
+    margin-left: 10px;
+  }
+  
+  input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-right: 5px;
+  }
+  
+  button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+/*Estilo del boton*/
+.boton {
+    margin: 30px;
+}
+/* Estilo personalizado para el botón */
+.btn-custom {
+    background-color: #04617b; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 7px 15px; /* Relleno */
+    text-align: center; /* Alineación del texto */
+    text-decoration: none;
+    display: inline-block;
+    font-size: 9px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px; /* Bordes redondeados */
+  }
+  .btn-primary {
+    background-color: #72ccf0; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 7px 15px; /* Relleno */
+    text-align: center; /* Alineación del texto */
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px; /* Bordes redondeados */
+  }
+  /* Estilo personalizado para el cuadro de selección de archivos */
+input[type="file"] {
+    display: none; /* Oculta el cuadro de selección de archivos por defecto */
+  }
+  
+  
+  .custom-file-upload {
+    border: 1px solid #03A9F4;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color: #03A9F4;
+    color: white; 
+  }
+  
+  .custom-file-upload:hover {
+    background-color: #e2e6ea;
+  }
+  
+  
+/* Estilo para el icono cita */
+i.bi-clipboard-pulse {
+    color:  #ffffff;
+    font-size: 2rem; 
+    font-size: 30px; /* Tamaño del icono */
+    margin-right: 15px; /* Espacio a la derecha del icono */
+}
+/* Estilo para el icono paciente*/
+i.bi-person-circle {
+    color:  #ffffff;
+    font-size: 2rem; 
+    font-size: 30px; /* Tamaño del icono */
+    margin-right: 15px; /* Espacio a la derecha del icono */
+}
+/* Estilo para el icono pdf*/
+i.bi-file-earmark-pdf-fill {
+    color:  #ef0000;
+    font-size: 2rem; 
+    font-size: 30px; /* Tamaño del icono */
+    margin-right: 15px; /* Espacio a la derecha del icono */
+}
+.center-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.barra {
+    background: #72ccf0;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin: 0;
+}
+
+.dropdown-menu {
+    margin: 17px;
+    background: #262a34;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.568);
+}
+
+img {
+    width: 100px; /* Ancho deseado */
+    height: auto; /* La altura se ajusta automáticamente para mantener la proporción original */
+    padding: 0px; /* Espacio alrededor de la imagen */
+    display: block; /* Hace que la imagen sea un elemento en bloque */
+    margin: 0 auto;
+    margin-top: 0;
+    float: left;
+}
+button{
+    float: right;
+}
+.menuperfil {
+    color: white;
+}
+
+.menuperfil:focus {
+    background: #23ae6b;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.568);
+}
+
+.cerrar:hover {
+    background-color: rgba(206, 65, 22, 0.877);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.568);
+}
+
+.user {
+    font-size: 35px;
+}
+
+
+/*BARRA LATERAL*/
+
+.barra-lateral {
+    background: #252121;
+    color: #fff;
+    min-width: 250px;
+    min-height: 100vh;
+    padding: 0;
+}
+
+.barra-lateral a {
+    color: #fff;
+}
+
+
+/*ESTILOS MENU*/
+
+.barra-lateral .menu a {
+    display: block;
+    padding: 20px;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+.barra-lateral .menu a:hover {
+    background-color: #003C5D;
+    text-decoration: none;
+}
+
+.active {
+    background: #003C5D;
+}
+
+.barra-lateral .menu {
+    border-top: 5px #fff solid;
+}
+
+.barra-lateral .menu a i {
+    margin-right: 20px;
+}
+
+
+/*MAIN*/
+
+.main {
+    padding-top: 40px;
+}
+
+.main .columna {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+
+/*mediaquerys*/
+
+@media screen and (max-width:1300px) {
+    .barra-lateral {
+        min-width: auto;
+    }
+    .barra-lateral .menu a span {
+        display: none;
+    }
+    .barra-lateral .menu a i {
+        margin: 0;
+    }
+    .barra {
+        min-width: auto;
+    }
+    .dropdown-menu {
+        margin: 20px -79px 0px;
+    }
+}
+
+@media screen and (max-width:575px) {
+    .barra-lateral {
+        min-height: auto;
+    }
+    .barra-lateral .menu a {
+        display: inline-block;
+        border-bottom: none;
+    }
+    .dropdown-menu {
+        margin: 20px -78px 0px;
+    }
+    .logocppe {
+        width: 100%;
+    }
+    body {
+        background: #D3D3D3;
+        font-size: 16px;
+        overflow: visible;
+    }
+}
+
+.formulariorecursos {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.568);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.menu {
+    border-top: 5px #fff solid;
+}
+
+@media screen and (max-width:575px) {
+    .barra-lateral {
+        height: auto;
+    }
+    .barra-lateral.menu a {
+        display: inline-block;
+        border-bottom: none;
+    }
+    .dropdown-menu {
+        margin: 20px -78 0px;
+    }
+    body {
+        font-size: 16px;
+        overflow: visible;
+    }
+}

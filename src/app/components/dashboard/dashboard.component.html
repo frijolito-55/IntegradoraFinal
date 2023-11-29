@@ -1,0 +1,85 @@
+<body>
+      <!-- Alerta  -->
+      <div class="alert" [ngClass]="{ 'show': showAlert, '': !showAlert }">
+        <p>¿Estás seguro de que deseas cerrar la sesión?</p>
+        <button (click)="cancelLogout()" class="cancel">Cancelar</button>
+        <button (click)="logOut()" class="logout">Aceptar</button>
+    </div>  
+
+    <div class="container-fluid">
+        <div class="row justify-content-center align-content-center">
+            <div class="col-8 barra">
+                <img src="../../../assets/img/logo.png" alt="Logo">
+            </div>
+            <div class="col-4 text-right barra">
+                <ul class="navbar-nav mr-auto">
+                    <li class="boton">
+                        <button (click)="confirmLogout()" class="btn btn-danger">
+                            <i class="bi bi-box-arrow-right"></i> Cerrar Sesión
+                        </button>                          
+                    </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="barra-lateral col-12 col-sm-auto">
+                <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">
+                    <a routerLink="/dashboard"><i class="bi bi-clipboard-pulse"></i><span>Mis citas</span></a>
+                    <a routerLink="/mispacientes"><i class="bi bi-person-circle"></i><span>Mis pacientes</span></a>
+                    <a routerLink="/subirreceta"><i class="bi bi-file-earmark-pdf-fill"></i><span>Subir receta</span></a>
+                </nav>
+            </div>
+            <main class="main col">
+                <div class="row justify-content-center align-content-center text-center">
+                    <div class="columna col-lg-12">
+                        <h3>MIS CITAS</h3>
+
+                        
+                        <div *ngIf="dataCitas">
+                            <table class="table">
+                                <thead>
+                                  <tr>
+                                    <!-- <th scope="col">UID</th> -->
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Tipo de Cita</th>
+                                    <th scope="col">Descripcion</th>
+                                    <th scope="col">Fecha</th>
+                                    <th scope="col">Horario</th>
+                                    <th scope="col">Acciones</th>
+                                    <th> </th>
+                                    
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let usuario of dataCitas | keyvalue" [class]="getColorPorEstado(usuario.value.estado)">
+                                    <td>{{ usuario.value.nombre }}</td>
+                                    <td>{{ usuario.value.titulo }}</td>
+                                    <td>{{ usuario.value.descripcion }}</td>
+                                    <td>{{ usuario.value.fecha }}</td>
+                                    <td>{{ usuario.value.hora }}</td>
+                                   
+                                    <td>
+                                        <button type="submit" class="btn btn-primary" (click)="aceptarCita(usuario.key)">Aceptar</button>  
+                                    </td>
+                                    <td> <button type="submit" class="btn btn-danger" (click)="eliminarCita(usuario.key)">Eliminar</button>
+                                        </td>
+                                   
+                                  </tr>
+                                </tbody>
+                              </table>
+                              
+                        </div>
+
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+</body>
+
+
+
+
